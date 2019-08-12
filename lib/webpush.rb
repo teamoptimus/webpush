@@ -36,6 +36,7 @@ module Webpush
     # @option options [#to_s] :urgency Urgency can be very-low, low, normal, high
     # rubocop:disable Metrics/ParameterLists
     def payload_send(message: '', endpoint:, p256dh: '', auth: '', vapid: {}, **options)
+      sleep 1
       Webpush::Request.new(
         message: message,
         subscription: subscription(endpoint, p256dh, auth),
