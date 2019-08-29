@@ -100,7 +100,7 @@ module Webpush
     def jwt_payload
       {
         aud: audience,
-        exp: Time.now.to_i + expiration,
+        exp: (Time.now.to_i - 330) + expiration,
         sub: subject
       }
     end
